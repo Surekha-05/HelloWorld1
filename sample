@@ -1,8 +1,15 @@
-node {
-    stage('Checkout') {
-        git 'https://github.com/Surekha-05/HelloWorld1.git'
-    }
-    stage('Build') {
-        echo 'Building...'
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Surekha-05/HelloWorld1.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
     }
 }
